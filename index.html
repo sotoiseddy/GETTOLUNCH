@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gettolunch - Draw Together</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="landing">
+    <canvas id="bgCanvas"></canvas>
+    <div class="landing-card">
+      <h1>Gettolunch</h1>
+      <p class="subtitle">Draw together in real time</p>
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input id="name" type="text" maxlength="20" placeholder="Enter your name" autofocus />
+      </div>
+      <div class="btn-group">
+        <button id="createBtn" class="btn btn-primary">Create Room</button>
+      </div>
+      <div class="divider"><span>or</span></div>
+      <div class="form-group join-row">
+        <input id="roomCode" type="text" maxlength="6" placeholder="Room code" class="code-input" />
+        <button id="joinBtn" class="btn btn-secondary">Join Room</button>
+      </div>
+      <p id="errorMsg" class="error"></p>
+    </div>
+    <script src="landing.js" defer></script>
+  </body>
+</html>
