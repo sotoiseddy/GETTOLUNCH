@@ -76,7 +76,8 @@ joinBtn.addEventListener('click', () => {
     errorMsg.textContent = 'Enter a valid 6-character room code';
     return;
   }
-  const ws = new WebSocket(`ws://${location.host}`);
+  const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const ws = new WebSocket(`${protocol}//${location.host}`);
   ws.onopen = () => ws.send(JSON.stringify({ type: 'join', room: code, name }));
   ws.onmessage = (e) => {
     const msg = JSON.parse(e.data);

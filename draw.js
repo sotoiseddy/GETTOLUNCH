@@ -84,7 +84,8 @@
 
   // --- WebSocket ---
   function connect() {
-    ws = new WebSocket(`ws://${location.host}`);
+    const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+    ws = new WebSocket(`${protocol}//${location.host}`);
     ws.onopen = () => {
       ws.send(JSON.stringify({ type: 'join', room: roomCode, name: userName }));
     };
